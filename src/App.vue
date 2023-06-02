@@ -1,6 +1,5 @@
 <template>
-  <div class="grid grid-cols-6 grid-rows-2 pt-10">
-    <div class="col-start-3 flex flex-col items-center row-start-1 mt-[25%]">
+  <div class="flex flex-col justify-center items-center">
       <LinkForm
         @submit-link="(url) => this.shortenLink(url)"
         labelText="URL"
@@ -8,23 +7,19 @@
         buttonText="Generate Link"
       />
       <LinkDisplay :shortLink="shortLink" />
-    </div>
-    <div class="flex items-center justify-center p-3 col-span-full row-start-1">
-      <LinkBackgroundSVG />
-    </div>
   </div>
 </template>
 
 <script>
 import LinkForm from "./components/LinkForm.vue";
 import LinkDisplay from "./components/LinkDisplay.vue";
-import LinkBackgroundSVG from "./components/LinkBackgroundSVG.vue";
+
 export default {
   name: "App",
   components: {
     LinkForm,
     LinkDisplay,
-    LinkBackgroundSVG,
+
   },
   data() {
     return {
@@ -58,4 +53,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

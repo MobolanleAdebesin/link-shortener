@@ -1,13 +1,14 @@
 <template>
-  <div class="col-start-3">
+  <div class="">
     <form @submit.prevent="$emit('submit-link', encodeURI(url))">
-      <div>
+      <div class="flex flex-col">
         <label class="text-blue-400 font-bold" for="LinkInput">{{
           labelText
         }}</label>
         <input
           class="mx-2 p-1 border-2 border-gray-200 text-center"
           name="LinkInput"
+          id="LinkInput"
           type="text"
           :placeholder="placeholderText"
           v-model="url"
@@ -32,8 +33,10 @@
             buttonText: String, 
         },
         data(){
+       
             return{
-                url: ''
+                url: '', 
+                componentHalfWidth: 0,
             }
         }, 
     }
